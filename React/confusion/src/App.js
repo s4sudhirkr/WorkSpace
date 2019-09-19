@@ -1,40 +1,62 @@
-import React  ,{ Component } from 'react';
- import './App.css';
+import React, { Component } from 'react';
+
+import './App.css';
 //import Menu from './components/MenuComponent';
-//import TravelMenu from './components/TravelComponent';
+import TravelMenu from './components/TravelComponent';
 import Main from './components/maincomponent';
-import {Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import Home from './components/Homepage';
 import MenuCard from './components/MenuCardComponent';
 import Menu from './components/MenuComponent';
 //import MenuCard from './components/MenuCardComponent';
- //import { DISHES } from './shared/dishes';
+import { TRAVEL  } from './shared/travel';
+import { LEADERS  } from './shared/leaders';
 //import {Navbar, NavbarBrand } from 'reactstrap';
 //import Tutor from './components/TutorComponent';
 //import DishDetail from './components/DishdetailComponent';
-import {  BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter,Redirect } from 'react-router-dom';
+import Header from './components/HeaderComponent';
+// import Footer from './FooterComponent';
 
+import TravelHome from './components/Travel/HomePageComponent';
+import CardPage from './components/Travel/CradComponent';
+import Example from './components/Travel/CarouselComponent';
+import Footer from './components/FooterComponent';
+import About from './components/AboutComponent';
+import Contact from './components/ContactComponet';
+import TravelMain from './components/TravelMainComponent';
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-    
-  //}
+  constructor(props) {
+    super(props);
+    this.state = {
+      dish: TRAVEL,
+      leader : LEADERS
+
+    }
+  }
 
 
 
   render() {
+    const HomePage = () => {
+      return (
+        <CardPage dishes={this.state.dish} />
+      );
+    }
+
     return (
       <BrowserRouter>
-      <div>
-        {/* <Home  /> */}
-      <Main  />
-      </div>
-      </BrowserRouter>
+        <div>
+           <TravelMain  /> 
+         
+          {/* <Main  /> */}
+        </div>
+      </BrowserRouter >
 
-      );
+    );
   }
-   }
-   export default App;
+}
+export default App;
 
 
 
@@ -54,15 +76,15 @@ class App extends Component {
 //  }
 //  export default App;
 
- {/* <Navbar dark color="secondary">
+{/* <Navbar dark color="secondary">
    <div className="container">
    <NavbarBrand href="/">React</NavbarBrand>   
    </div>
    </Navbar> */}
-   {/* <DishDetail  dishes={this.state.dishes} /> */}
-  {/* <TravelMenu /> */}
-    {/* <MenuCard dishes={this.state.dishes} />   */}
-    {/* <div ><Tutor /> </div> */}
+{/* <DishDetail  dishes={this.state.dishes} /> */ }
+{/* <TravelMenu /> */ }
+{/* <MenuCard dishes={this.state.dishes} />   */ }
+{/* <div ><Tutor /> </div> */ }
 
 
 
@@ -85,10 +107,10 @@ class App extends Component {
 //  <Navbar dark color="secondary">
 //    <div className="container">
 //    <NavbarBrand href="/">Travel </NavbarBrand>   
- 
+
 //    </div>
 //    </Navbar>
-   
+
 //     {/* <MenuCard dishes={this.state.dishes} />  */}
 //    <TravelMenu /> 
 
@@ -117,6 +139,6 @@ class App extends Component {
 
 
 
- 
+
 
 

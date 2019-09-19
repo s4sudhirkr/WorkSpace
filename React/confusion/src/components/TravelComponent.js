@@ -11,7 +11,7 @@ class TravelMenu extends Component
                 {
                     id: 0,
                     name:'Trip',
-                    image: 'assets/travelimages/1.png',
+                    image: '/assets/travelimages/1.png',
                     category: 'mains',
                     label:'Hot',
                     price:'4.99',
@@ -19,7 +19,7 @@ class TravelMenu extends Component
                  {
                     id: 1,
                     name:'Zucchipakoda',
-                    image: 'assets/travelimages/2.png',
+                    image: '/assets/travelimages/2.png',
                     category: 'appetizer',
                     label:'',
                     price:'1.99',
@@ -27,7 +27,7 @@ class TravelMenu extends Component
                  {
                     id: 2,
                     name:'Vadonut',
-                    image: 'assets/travelimages/3.png',
+                    image: '/assets/travelimages/3.png',
                     category: 'appetizer',
                     label:'New',
                     price:'1.99',
@@ -35,7 +35,7 @@ class TravelMenu extends Component
                  {
                     id: 3,
                     name:'ElaiCheese Cake',
-                    image: 'assets/travelimages/4.png',
+                    image: '/assets/travelimages/4.png',
                     category: 'dessert',
                     label:'',
                     price:'2.99',
@@ -44,7 +44,7 @@ class TravelMenu extends Component
                  {
                     id: 4,
                     name:'ElaiCheese Cake',
-                    image: 'assets/travelimages/5.png',
+                    image: '/assets/travelimages/5.png',
                     category: 'dessert',
                     label:'',
                     price:'2.99',
@@ -58,6 +58,7 @@ class TravelMenu extends Component
     {
         const travelmenu=this.state.dishes.map((dish)=>
         {
+           
             return (
                 <div key={dish.id} className="col-12 mt-5">
                    <Media tag="li">
