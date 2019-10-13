@@ -64,7 +64,7 @@ function RenderLeader({ leader }) {
         <div>
             <Container>
             <Card body inverse color={leader.color}>
-            <Link to="/contactus" >
+            <Link to="/traveldetails" >
                 <Row >
                     <Col sm="7">
                         <Row>
@@ -110,25 +110,7 @@ function RenderLeader({ leader }) {
 <span> &nbsp;  </span>
 </div>
         </div>
-        // <Card bg="primary" text="white" >
-        //     <CardBody>
-        //         <div className="col-4 mt-5">
-
-        //             <h2>{leader.name}</h2>
-        //             <CardText left>{leader.designation}</CardText>
-        //             <p>{leader.description}</p>
-
-
-        //         </div>
-        //         <div className="col-4 mt-1">
-
-        //             {/* <CardImgOverlay variant="right"  right src={leader.image} alt={leader.name} size="5*5"  className="col-12 mt-5"/> */}
-        //             <CardImg top variant="right" right src={leader.image} alt={leader.name} size="2*5" />
-
-
-        //         </div>
-        //     </CardBody>
-        // </Card>
+        
 
     );
 

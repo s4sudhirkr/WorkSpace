@@ -8,7 +8,7 @@ export const TRAVEL =
         label:'Hot',
         price:'4.99',
         featured: true,
-        color: 'primary',
+        color: 'secondary',
         description:'A unique combination of Indian Album  and Italian pics, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia , Guntur and Buffalo picture.'                    
         },
         {

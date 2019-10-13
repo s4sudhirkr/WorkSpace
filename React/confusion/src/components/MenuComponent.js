@@ -4,6 +4,7 @@ import {
     Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle, Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
+import { Loading } from './redux/LoadingComponent';
 //import { DISHES } from '../shared/dishes';
 import { Link } from 'react-router-dom';
 function RenderMenuItem({ dish, onClick }) {
@@ -20,7 +21,7 @@ function RenderMenuItem({ dish, onClick }) {
 }
 
 const Menu = (props) => {
-    const menu = props.dishes.map((dish) => {
+    const menu = props.dishes.dishes.map((dish) => {
         return (
 
             <div key={dish.id} className="col-12 col-md-5 m-1">
@@ -28,23 +29,43 @@ const Menu = (props) => {
             </div>
         );
     });
-    return (
-        <div className="container">
-            <div className="row">
-                <Breadcrumb>
-                    <BreadcrumbItem ><Link to="/home">Home</Link></BreadcrumbItem>
-                    <BreadcrumbItem active>Menu</BreadcrumbItem>
-                </Breadcrumb>
-                <div className="col-12">
-                    <h2>Menu</h2>
-                </div>
+    if (props.dishes.isLoading) {
+        return (
+            <div className="container">
                 <div className="row">
-                    {menu}
-                    </div>
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    else if (props.dishes.errMess) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <h4> {props.dishes.errMess}  </h4>
+                </div>
+            </div>
+        );
+    }
+else
+
+return (
+    <div className="container">
+        <div className="row">
+            <Breadcrumb>
+                <BreadcrumbItem ><Link to="/home">Home</Link></BreadcrumbItem>
+                <BreadcrumbItem active>Menu</BreadcrumbItem>
+            </Breadcrumb>
+            <div className="col-12">
+                <h2>Menu</h2>
+            </div>
+            <div className="row">
+                {menu}
             </div>
         </div>
+    </div>
 
-    );
+);
 }
 export default Menu;
 
@@ -178,7 +199,7 @@ export default Menu;
 //                 <div key={dish.id} className="col-12 col-md-5 m-1">
 //                     {/* {this.renderDish(dish)} */}
 //                     {/* <Card key={dish.id}  onClick={() => this.onDishSelect(dish)} >
-                        
+
 //                         <CardImg width="100%" src={dish.image} alt={dish.name} />
 //                         <CardImgOverlay>
 //                       <CardTitle>{dish.name}</CardTitle>

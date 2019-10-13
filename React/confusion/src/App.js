@@ -25,6 +25,11 @@ import Footer from './components/FooterComponent';
 import About from './components/AboutComponent';
 import Contact from './components/ContactComponet';
 import TravelMain from './components/TravelMainComponent';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './components/redux/configureStore';
+// call from here to fill store value
+const store=ConfigureStore();
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -37,21 +42,25 @@ class App extends Component {
 
 
 
+
   render() {
-    const HomePage = () => {
-      return (
-        <CardPage dishes={this.state.dish} />
-      );
-    }
+    // const HomePage = () => {
+    //   return (
+    //     <CardPage dishes={this.state.dish} />
+    //   );
+    // }
 
     return (
+      // Calling redux from here
+      <Provider store={store}>
       <BrowserRouter>
         <div>
-           <TravelMain  /> 
+           {/* <TravelMain  />  */}
          
-          {/* <Main  /> */}
+          <Main  />
         </div>
       </BrowserRouter >
+      </Provider>
 
     );
   }

@@ -113,7 +113,7 @@ toggleModal()
     <FormGroup>
         <Label htmlfor="username"> Username </Label>
        <input type="text" id="username" name="username" 
-       innerRef={(input)=>this.username=input} />
+       Ref={(input)=>this.username=input} />
         </FormGroup>
 
         <FormGroup>

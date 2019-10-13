@@ -17,6 +17,7 @@ import Example from './Travel/CarouselComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponet';
+import TravelDetails from '.././components/Travel/TravelDetailsComponent';
 
 class TravelMain extends Component {
   constructor(props) {
@@ -51,7 +52,8 @@ class TravelMain extends Component {
             <Route exact path="/contactus" component={Contact} />
             <Route exact path="/aboutus" component={() => <About leaders={this.state.leader} />} />
             {/* <Route path="/aboutus/:leaderId" component={RenderLeader} /> */}
-            component={()=><About dishes={this.state.leaders} /> } />
+            component={()=><About dishes={this.state.leaders} /> }
+            <Route exact path="/traveldetails" component={()=><TravelDetails leaders={this.state.leader[0]} />} />
             <Redirect to="/home" />
           </Switch>
           <Footer />
